@@ -17,7 +17,7 @@ function Login() {
         setLoading(true);
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/auth/login",
+                "https://crypto-backend-ur3p.onrender.com/api/auth/login",
                 { email, password }
             );
             login(response.data.user, response.data.token);

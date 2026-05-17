@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/portfolio";
+const API_URL = "https://crypto-backend-ur3p.onrender.com/api/portfolio";
 const getToken = () => localStorage.getItem("token");
 
 export const getPortfolio = async () => {

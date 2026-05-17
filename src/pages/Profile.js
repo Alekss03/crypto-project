@@ -27,7 +27,7 @@ function ProfilePage() {
         setLoading(true);
         try {
             const response = await axios.put(
-                "http://localhost:5000/api/auth/update",
+                "https://crypto-backend-ur3p.onrender.com/api/auth/update",
                 { name },
                 { headers: { "x-auth-token": token } }
             );
