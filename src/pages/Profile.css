@@ -1,0 +1,103 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.profile-card {
+    background-color: var(--darckgrey);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.profile-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-name {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.profile-email {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.profile-info {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.info-label {
+    color: var(--grey);
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.edit-title {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.edit-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.edit-input {
+    flex: 1;
+    background-color: var(--black);
+    border: 1px solid var(--grey);
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    color: var(--white);
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.edit-input:focus {
+    border-color: var(--blue);
+}
+
+.edit-btn {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.edit-btn:hover { opacity: 0.8; }
+.edit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (max-width: 600px) {
+    .edit-form { flex-direction: column; }
+}

@@ -1,4 +1,8 @@
-export const convertDate = (number) =>{
+export const convertDate = (number, days) => {
     var myDate = new Date(number);
-    return myDate.getDate() + "/" + (myDate.getMonth()+1);
-}
+    if (days <= 7) {
+        return myDate.getDate() + "/" + (myDate.getMonth() + 1) + " " + 
+            myDate.getHours() + ":00";
+    }
+    return myDate.getDate() + "/" + (myDate.getMonth() + 1);
+};

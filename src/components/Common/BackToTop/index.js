@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
-import './styles.css'
+import './styles.css';
 
 function BackToTop() {
-    let mybutton = document.getElementById("top-btn");
+    const btnRef = useRef(null);
 
+    useEffect(() => {
+        window.onscroll = function () {
+            if (btnRef.current) {
+                if (
+                    document.body.scrollTop > 500 ||
+                    document.documentElement.scrollTop > 500
+                ) {
+                    btnRef.current.style.display = "flex";
+                } else {
+                    btnRef.current.style.display = "none";
+                }
+            }
+        };
 
-    window.onscroll = function () {
-        scrollFunction();
-    };
+        return () => {
+            window.onscroll = null;
+        };
+    }, []);
 
-    function scrollFunction() {
-        if (
-            document.body.scrollTop > 500 ||
-            document.documentElement.scrollTop > 500
-        ) {
-        mybutton.style.display = "flex";
-        } else {
-        mybutton.style.display = "none";
-        }
-    }
     return (
         <div
+            ref={btnRef}
             className="back-top-top-btn"
             id="top-btn"
             onClick={() => {
@@ -29,7 +34,7 @@ function BackToTop() {
                 document.documentElement.scrollTop = 0;
             }}
         >
-        <ExpandLessRoundedIcon />
+            <ExpandLessRoundedIcon />
         </div>
     );
 }

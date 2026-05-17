@@ -1,0 +1,185 @@
+.portfolio-container {
+    padding: 1rem 2rem;
+}
+
+.portfolio-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-card {
+    background-color: var(--darckgrey);
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--grey);
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.green { color: var(--green); }
+.red { color: var(--red); }
+
+.portfolio-chart {
+    margin-bottom: 1.5rem;
+}
+
+.chart-title {
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.add-btn {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.add-btn:hover { opacity: 0.8; }
+
+.add-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-select, .form-input {
+    background-color: var(--black);
+    border: 1px solid var(--grey);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-select { min-width: 200px; }
+.form-input { width: 150px; }
+
+.empty-text {
+    color: var(--grey);
+    text-align: center;
+    padding: 2rem;
+}
+
+.portfolio-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.portfolio-table th {
+    text-align: left;
+    padding: 0.7rem 0;
+    color: var(--grey);
+    border-bottom: 1px solid var(--darckgrey);
+}
+
+.portfolio-table td {
+    padding: 0.8rem 0;
+    color: var(--white);
+    border-bottom: 1px solid var(--darckgrey);
+}
+
+.coin-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coin-sym {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.coin-nm {
+    font-size: 0.75rem;
+    color: var(--grey);
+}
+
+.delete-icon {
+    color: var(--grey);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-icon:hover { color: var(--red); }
+
+@media (max-width: 800px) {
+    .portfolio-container { padding: 1rem; }
+    .add-form { flex-direction: column; }
+    .form-input { width: 100%; }
+    .portfolio-table th:nth-child(3),
+    .portfolio-table td:nth-child(3) { display: none; }
+}
+
+@media (max-width: 768px) {
+    .portfolio-table th:nth-child(3),
+    .portfolio-table td:nth-child(3),
+    .portfolio-table th:nth-child(4),
+    .portfolio-table td:nth-child(4) {
+        display: none;
+    }
+
+    .portfolio-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-container {
+        padding: 0.5rem;
+    }
+
+    .add-form {
+        flex-direction: column;
+    }
+
+    .form-input, .form-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-table th:nth-child(5),
+    .portfolio-table td:nth-child(5) {
+        display: none;
+    }
+
+    .portfolio-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .metric-value {
+        font-size: 1.1rem;
+    }
+}

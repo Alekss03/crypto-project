@@ -1,15 +1,18 @@
 import axios from "axios";
 
-export const getCoinPrices = (id,days) =>{
-    const prices = axios
-        .get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
-        )
-        .then((response) => {
-            console.log("Prices>>>>", response.data.prices);
-            return response.data.prices;
-        }) 
-        .catch((error) => {
-            console.log("ERROR>>>", error);
-        });
-        return prices;
-}
+export const getCoinPrices = async (id, days, priceType) => {
+    try {
+        const response = await axios.get(
+            `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`,
+            {
+                headers: {
+                    'x-cg-demo-api-key': process.env.REACT_APP_COINGECKO_API_KEY
+                }
+            }
+        );
+        return response.data[priceType] || [];
+    } catch (error) {
+        console.log("ERROR>>>", error.message);
+        return [];
+    }
+};

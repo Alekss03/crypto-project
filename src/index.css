@@ -63,10 +63,11 @@ img {
 }
 
 .grey-wrapper {
-  display: block;
+  background-color: var(--darkgrey);
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+  border-radius: 1rem;
   width: 90%;
-  background-color: var(--darckgrey);
-  margin: 1.5rem;
-  border-radius: 0.8rem;
-  padding: 1rem 1rem ;
+  display: block;
+  margin: 1.5rem auto;
 }
