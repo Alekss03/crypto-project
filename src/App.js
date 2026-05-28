@@ -31,7 +31,8 @@ useEffect(() => {
       root.style.setProperty('--card-bg', '#1e1e1e');
       root.style.setProperty('--border', 'rgba(255,255,255,0.1)');
       root.style.setProperty('--text', '#ffffff');
-      root.style.setProperty('--black', '#0f0f0f');  // додай сюди
+      root.style.setProperty('--black', '#0f0f0f');
+      root.style.setProperty('--darkgrey', '#1e1e1e');  // додай
     } else {
       root.style.setProperty('--background', '#f5f5f5');
       root.style.setProperty('--background-secondary', '#ffffff');
@@ -40,7 +41,8 @@ useEffect(() => {
       root.style.setProperty('--card-bg', '#ffffff');
       root.style.setProperty('--border', 'rgba(0,0,0,0.1)');
       root.style.setProperty('--text', '#1a1a1a');
-      root.style.setProperty('--black', '#ffffff');  // додай сюди
+      root.style.setProperty('--black', '#ffffff');
+      root.style.setProperty('--darkgrey', '#f0f0f0');  // додай
     }
   }, [isDark]);
 
